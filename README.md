@@ -4,13 +4,16 @@
 
 File storage that saves files to local storage. 
 
-In order to clear the directory every time you start, add the value `clearDirectoryAfterStart=true` to
+* In order to clear the directory every time you start, add the value `clearDirectoryAfterStart=true` to
 [application.properties](src/main/resources/application.properties)
 
-You can download a file stored in the repository by executing a request
-```bash
-curl http://localhost:8080/download/{name}
-```
+* You can download a file stored in the repository by executing a request
+
+    ```bash
+    curl http://localhost:8080/download/{name}
+    ```
+
+* When downloading files, the degree of download is displayed
 
 ## Build 
 
