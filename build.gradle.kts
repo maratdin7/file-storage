@@ -21,6 +21,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
@@ -37,6 +38,5 @@ tasks.withType<Test> {
 
 tasks.jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    manifest.attributes["Main-Class"] = "com.example.filestorage.FileStorageApplicationKt"
-    from(configurations.compileClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+    manifest.attributes["Main-Class"] = "FileStorageApplication"
 }

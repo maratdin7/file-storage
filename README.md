@@ -2,9 +2,7 @@
 
 ## Description 
 
-File storage that saves files to local storage. 
-
-In order to clear the directory every time you start, add the value `clearDirectoryAfterStart=true` to [application.properties](src/main/resources/application.properties)
+File storage that saves files to local storage
 
 ## Build 
 
