@@ -18,7 +18,7 @@ File storage that saves files to local storage.
 ## Build 
 
 ```bash
-docker build -t file-storage
+docker build -t file-storage .
 ```
 
 The process may take some time, as gradle has to load all the necessary dependencies
