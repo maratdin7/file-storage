@@ -6,7 +6,7 @@ RUN gradle bootJar
 
 FROM openjdk:11
 ENV APP_HOME=/usr/file-storage
-ENV JAR_NAME=file-storage-0.0.1.jar
+ENV JAR_NAME=file-storage-0.0.2.jar
 COPY --from=build $APP_HOME/build/libs/$JAR_NAME .
 VOLUME /downloads
 EXPOSE 8080
