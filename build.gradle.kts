@@ -19,9 +19,10 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("me.tongfei:progressbar:0.9.2")
+    implementation("org.springframework.boot:spring-boot-starter-web:2.6.1")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.6")
 }
 
 tasks.withType<KotlinCompile> {
