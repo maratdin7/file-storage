@@ -1,13 +1,14 @@
 FROM gradle:jdk11 AS build
-
 ENV APP_HOME=/usr/file-storage
 WORKDIR $APP_HOME
 COPY . $APP_HOME/
-#COPY gradle $APP_HOME/gradle
-
-RUN gradle build
+RUN gradle bootJar
 
 FROM openjdk:11
 ENV APP_HOME=/usr/file-storage
-COPY --from=build /usr/file-storage/build/libs/file-storage-0.0.1-plain.jar .
-ENTRYPOINT ["java","-jar","file-storage-0.0.1-plain.jar"]
+ENV JAR_NAME=file-storage-0.0.1.jar
+COPY --from=build $APP_HOME/build/libs/$JAR_NAME .
+VOLUME /downloads
+EXPOSE 8080
+CMD java -jar $JAR_NAME 2>log
+
