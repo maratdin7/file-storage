@@ -1,5 +1,7 @@
 # File storage
 
+[![tmp](https://github.com/maratdin7/file-storage/blob/feature/github-action-for-test/.github/workflows/gradle.yml/badge.svg)](https://github.com/maratdin7/file-storage/blob/feature/github-action-for-test/.github/workflows/gradle.yml)
+
 ## Description 
 
 File storage that saves files to local storage. 
