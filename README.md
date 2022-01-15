@@ -1,6 +1,6 @@
 # File storage
 
-[![tmp](https://github.com/maratdin7/file-storage/blob/feature/github-action-for-test/.github/workflows/gradle.yml/badge.svg)](https://github.com/maratdin7/file-storage/blob/feature/github-action-for-test/.github/workflows/gradle.yml)
+[![tmp](https://github.com/maratdin7/file-storage/actions/workflows/gradle.yml/badge.svg?branch=github-action-for-test)](https://github.com/maratdin7/file-storage/actions/workflows/gradle.yml)
 
 ## Description 
 
