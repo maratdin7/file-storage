@@ -14,26 +14,26 @@ import javax.annotation.PostConstruct
 @SpringBootApplication
 class FileStorageApplication {
     @Value("\${clearDirectoryAfterStart}")
-    private var isDirectoryNeedClear: Boolean = false
+    protected var isDirectoryNeedClear: Boolean = false
 
     @Value("\${defaultPath}")
     private lateinit var defaultPath: String
 
-    fun clearDirectory() {
+    fun clearDirectory(path: String) {
         if (isDirectoryNeedClear.not()) return
-        val dir = File(defaultPath)
+        val dir = File(path)
         FileUtils.cleanDirectory(dir)
     }
 
     @PostConstruct
     private fun postConstructor() {
-        startDownloader()
-        clearDirectory()
+        startDownloader(defaultPath)
+        clearDirectory(defaultPath)
     }
 
     @OptIn(DelicateCoroutinesApi::class)
-    private fun startDownloader() {
-        GlobalScope.launch { DownloadFile(defaultPath).readFiles() }
+    private fun startDownloader(path: String) {
+        GlobalScope.launch { DownloadFile(path).readFiles() }
     }
 }
 

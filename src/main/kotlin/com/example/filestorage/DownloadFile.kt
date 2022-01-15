@@ -23,7 +23,7 @@ class SimpleProgressBar(task: String, length: Long) : ProgressBar(
     Duration.ZERO
 )
 
-class DownloadFile(private val defaultPath: String) {
+open class DownloadFile(private val defaultPath: String) {
 
     private fun URL.download(path: String, updateProgress: (n: Long) -> Unit) {
         openStream().use { input ->
@@ -39,22 +39,24 @@ class DownloadFile(private val defaultPath: String) {
         }
     }
 
-    private fun download(link: String, path: String) {
+    protected fun download(link: String, path: String) {
         val url = URL(link)
-        val length = url.openConnection().run {
-            connect()
-            contentLength.toLong()
-        }
+        val length = url.fileLength()
         SimpleProgressBar("Скачивание", length).use {
             url.download(path, it::stepBy)
             it.extraMessage = "Успешно!"
         }
     }
 
+    protected fun URL.fileLength(): Long =
+        openConnection().run {
+            connect()
+            contentLength.toLong()
+        }
 
     fun readFiles() {
         print("Введите ссылку: ")
-        val link = readln()
+        val link = runCatching(::readln).getOrElse { return }
         print("Введите название файла: ")
         val name = readln()
 
