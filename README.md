@@ -1,5 +1,7 @@
 # File storage
 
+[![master](https://github.com/maratdin7/file-storage/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/maratdin7/file-storage/actions/workflows/gradle.yml)
+[![dev](https://github.com/maratdin7/file-storage/actions/workflows/gradle.yml/badge.svg?branch=dev)](https://github.com/maratdin7/file-storage/actions/workflows/gradle.yml)
 ## Description 
 
 File storage that saves files to local storage. 
